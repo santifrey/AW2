@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mouse Logitech",
+    "desc": "Mouse inalámbrico de uso diario con conexión USB.",
+    "precio": 15000,
+    "imagen": "mouse.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Teclado Redragon",
+    "desc": "Teclado mecánico con iluminación RGB y switches resistentes.",
+    "precio": 45000,
+    "imagen": "teclado.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Auriculares Sony",
+    "desc": "Auriculares inalámbricos con sonido envolvente y batería duradera.",
+    "precio": 60000,
+    "imagen": "auriculares.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor Samsung 24\"",
+    "desc": "Monitor Full HD de 24 pulgadas con buena calidad de imagen.",
+    "precio": 120000,
+    "imagen": "monitor.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Notebook Lenovo",
+    "desc": "Notebook con procesador i5 y 8GB de RAM para uso general.",
+    "precio": 350000,
+    "imagen": "notebook.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Webcam Logitech",
+    "desc": "Webcam HD ideal para videollamadas y streaming básico.",
+    "precio": 30000,
+    "imagen": "webcam.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Silla Gamer",
+    "desc": "Silla ergonómica diseñada para largas sesiones frente a la PC.",
+    "precio": 200000,
+    "imagen": "silla.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Disco SSD 1TB",
+    "desc": "Unidad de almacenamiento sólida de alta velocidad y gran capacidad.",
+    "precio": 80000,
+    "imagen": "ssd.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Placa de Video RTX 3060",
+    "desc": "Tarjeta gráfica potente para gaming y tareas exigentes.",
+    "precio": 500000,
+    "imagen": "gpu.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Router TP-Link",
+    "desc": "Router con tecnología WiFi 6 para conexiones rápidas y estables.",
+    "precio": 70000,
+    "imagen": "router.jpg"
+  }
+]
