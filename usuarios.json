@@ -1,37 +1,42 @@
 [
-  { 
+  {
     "id": 1,
-    "nombre": "Juan", 
-    "apellido": "Pérez", 
-    "email": "juan@gmail.com", 
-    "contraseña": "1234" 
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "email": "juan@gmail.com",
+    "contraseña": "1234",
+    "activo": true
   },
-  { 
-    "id": 2, 
-    "nombre": "María", 
-    "apellido": "Gómez", 
-    "email": "maria@gmail.com", 
-    "contraseña": "abcd" 
+  {
+    "id": 2,
+    "nombre": "María",
+    "apellido": "Gómez",
+    "email": "maria@gmail.com",
+    "contraseña": "abcd",
+    "activo": true
   },
-  { 
-    "id": 3, 
-    "nombre": "Lucas", 
-    "apellido": "Fernández", 
-    "email": "lucas@gmail.com", 
-    "contraseña": "pass123" 
+  {
+    "id": 3,
+    "nombre": "Lucas",
+    "apellido": "Fernández",
+    "email": "lucas@gmail.com",
+    "contraseña": "pass123",
+    "activo": false
   },
-  { 
-    "id": 4, 
-    "nombre": "Sofía", 
-    "apellido": "López", 
-    "email": "sofia@gmail.com", 
-    "contraseña": "sofia2024" 
+  {
+    "id": 4,
+    "nombre": "Sofía",
+    "apellido": "López",
+    "email": "sofia@gmail.com",
+    "contraseña": "sofia2024",
+    "activo": true
   },
-  { 
-    "id": 5, 
-    "nombre": "Martín", 
-    "apellido": "Rodríguez", 
-    "email": "martin@gmail.com", 
-    "contraseña": "xyz789" 
+  {
+    "id": 5,
+    "nombre": "Martín",
+    "apellido": "Rodríguez",
+    "email": "martin@gmail.com",
+    "contraseña": "xyz789",
+    "activo": true
   }
 ]
