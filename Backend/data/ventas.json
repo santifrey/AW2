@@ -7,7 +7,11 @@
     "direccion": "CABA 123",
     "pagado": true,
     "productos": [
-      { "id_producto": 3, "cantidad": 1, "precio_unitario": 60000 }
+      {
+        "id_producto": 3,
+        "cantidad": 1,
+        "precio_unitario": 60000
+      }
     ]
   },
   {
@@ -18,8 +22,16 @@
     "direccion": "CABA 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 2, "cantidad": 1, "precio_unitario": 45000 },
-      { "id_producto": 1, "cantidad": 1, "precio_unitario": 15000 }
+      {
+        "id_producto": 2,
+        "cantidad": 1,
+        "precio_unitario": 45000
+      },
+      {
+        "id_producto": 1,
+        "cantidad": 1,
+        "precio_unitario": 15000
+      }
     ]
   },
   {
@@ -30,7 +42,11 @@
     "direccion": "La Plata 789",
     "pagado": false,
     "productos": [
-      { "id_producto": 4, "cantidad": 1, "precio_unitario": 120000 }
+      {
+        "id_producto": 4,
+        "cantidad": 1,
+        "precio_unitario": 120000
+      }
     ]
   },
   {
@@ -41,7 +57,11 @@
     "direccion": "Rosario 123",
     "pagado": true,
     "productos": [
-      { "id_producto": 6, "cantidad": 1, "precio_unitario": 30000 }
+      {
+        "id_producto": 6,
+        "cantidad": 1,
+        "precio_unitario": 30000
+      }
     ]
   },
   {
@@ -52,7 +72,11 @@
     "direccion": "Córdoba 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 8, "cantidad": 1, "precio_unitario": 80000 }
+      {
+        "id_producto": 8,
+        "cantidad": 1,
+        "precio_unitario": 80000
+      }
     ]
   },
   {
@@ -63,7 +87,11 @@
     "direccion": "CABA 123",
     "pagado": true,
     "productos": [
-      { "id_producto": 1, "cantidad": 1, "precio_unitario": 15000 }
+      {
+        "id_producto": 1,
+        "cantidad": 1,
+        "precio_unitario": 15000
+      }
     ]
   },
   {
@@ -74,7 +102,11 @@
     "direccion": "CABA 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 10, "cantidad": 1, "precio_unitario": 70000 }
+      {
+        "id_producto": 10,
+        "cantidad": 1,
+        "precio_unitario": 70000
+      }
     ]
   },
   {
@@ -85,7 +117,11 @@
     "direccion": "La Plata 789",
     "pagado": true,
     "productos": [
-      { "id_producto": 7, "cantidad": 1, "precio_unitario": 200000 }
+      {
+        "id_producto": 7,
+        "cantidad": 1,
+        "precio_unitario": 200000
+      }
     ]
   },
   {
@@ -96,7 +132,11 @@
     "direccion": "Rosario 123",
     "pagado": false,
     "productos": [
-      { "id_producto": 9, "cantidad": 1, "precio_unitario": 500000 }
+      {
+        "id_producto": 9,
+        "cantidad": 1,
+        "precio_unitario": 500000
+      }
     ]
   },
   {
@@ -107,10 +147,13 @@
     "direccion": "Córdoba 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 2, "cantidad": 1, "precio_unitario": 45000 }
+      {
+        "id_producto": 2,
+        "cantidad": 1,
+        "precio_unitario": 45000
+      }
     ]
   },
-
   {
     "id": 11,
     "id_usuario": 1,
@@ -119,7 +162,11 @@
     "direccion": "CABA 123",
     "pagado": true,
     "productos": [
-      { "id_producto": 6, "cantidad": 1, "precio_unitario": 30000 }
+      {
+        "id_producto": 6,
+        "cantidad": 1,
+        "precio_unitario": 30000
+      }
     ]
   },
   {
@@ -130,7 +177,11 @@
     "direccion": "CABA 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 4, "cantidad": 1, "precio_unitario": 120000 }
+      {
+        "id_producto": 4,
+        "cantidad": 1,
+        "precio_unitario": 120000
+      }
     ]
   },
   {
@@ -141,7 +192,11 @@
     "direccion": "La Plata 789",
     "pagado": false,
     "productos": [
-      { "id_producto": 1, "cantidad": 1, "precio_unitario": 15000 }
+      {
+        "id_producto": 1,
+        "cantidad": 1,
+        "precio_unitario": 15000
+      }
     ]
   },
   {
@@ -152,7 +207,11 @@
     "direccion": "Rosario 123",
     "pagado": true,
     "productos": [
-      { "id_producto": 8, "cantidad": 1, "precio_unitario": 80000 }
+      {
+        "id_producto": 8,
+        "cantidad": 1,
+        "precio_unitario": 80000
+      }
     ]
   },
   {
@@ -163,7 +222,11 @@
     "direccion": "Córdoba 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 3, "cantidad": 1, "precio_unitario": 60000 }
+      {
+        "id_producto": 3,
+        "cantidad": 1,
+        "precio_unitario": 60000
+      }
     ]
   },
   {
@@ -174,7 +237,11 @@
     "direccion": "CABA 123",
     "pagado": true,
     "productos": [
-      { "id_producto": 2, "cantidad": 1, "precio_unitario": 45000 }
+      {
+        "id_producto": 2,
+        "cantidad": 1,
+        "precio_unitario": 45000
+      }
     ]
   },
   {
@@ -185,7 +252,11 @@
     "direccion": "CABA 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 10, "cantidad": 1, "precio_unitario": 70000 }
+      {
+        "id_producto": 10,
+        "cantidad": 1,
+        "precio_unitario": 70000
+      }
     ]
   },
   {
@@ -196,7 +267,11 @@
     "direccion": "La Plata 789",
     "pagado": true,
     "productos": [
-      { "id_producto": 7, "cantidad": 1, "precio_unitario": 200000 }
+      {
+        "id_producto": 7,
+        "cantidad": 1,
+        "precio_unitario": 200000
+      }
     ]
   },
   {
@@ -207,7 +282,11 @@
     "direccion": "Rosario 123",
     "pagado": true,
     "productos": [
-      { "id_producto": 6, "cantidad": 1, "precio_unitario": 30000 }
+      {
+        "id_producto": 6,
+        "cantidad": 1,
+        "precio_unitario": 30000
+      }
     ]
   },
   {
@@ -218,7 +297,34 @@
     "direccion": "Córdoba 456",
     "pagado": true,
     "productos": [
-      { "id_producto": 8, "cantidad": 1, "precio_unitario": 80000 }
+      {
+        "id_producto": 8,
+        "cantidad": 1,
+        "precio_unitario": 80000
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "id_usuario": 1,
+    "fecha": "2026-05-16T23:45:23.361Z",
+    "total": 270000,
+    "productos": [
+      {
+        "id_producto": 1,
+        "cantidad": 3,
+        "precio_unitario": 15000
+      },
+      {
+        "id_producto": 2,
+        "cantidad": 1,
+        "precio_unitario": 45000
+      },
+      {
+        "id_producto": 3,
+        "cantidad": 3,
+        "precio_unitario": 60000
+      }
     ]
   }
 ]
