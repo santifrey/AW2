@@ -5,13 +5,13 @@ const router = express.Router();
 
 const path = "./data/usuarios.json";
 
-// GET todos
+// GET 
 router.get("/", (req, res) => {
   const data = JSON.parse(fs.readFileSync(path));
   res.json(data);
 });
 
-// GET por id
+// GET 
 router.get("/:id", (req, res) => {
   const data = JSON.parse(fs.readFileSync(path));
   const user = data.find(u => u.id == req.params.id);
@@ -36,10 +36,18 @@ router.post("/", (req, res) => {
   res.status(201).json(newUser);
 });
 
-// DELETE con validación
+// DELETE 
 router.delete("/:id", (req, res) => {
   const usuarios = JSON.parse(fs.readFileSync(path));
   const ventas = JSON.parse(fs.readFileSync("./data/ventas.json"));
+
+  const user = usuarios.find(u => u.id == req.params.id);
+
+  if (!user) {
+    return res.status(404).json({
+      error: "Usuario no encontrado"
+    });
+  }
 
   const tieneVentas = ventas.some(v => v.id_usuario == req.params.id);
 
@@ -52,7 +60,7 @@ router.delete("/:id", (req, res) => {
   const nuevosUsuarios = usuarios.filter(u => u.id != req.params.id);
   fs.writeFileSync(path, JSON.stringify(nuevosUsuarios, null, 2));
 
-  res.json({ mensaje: "Usuario eliminado" });
+  res.json({ mensaje: "Usuario eliminado correctamente" });
 });
 
 export default router;
