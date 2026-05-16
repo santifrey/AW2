@@ -1,5 +1,1 @@
-# Dependencias de Node.js
-node_modules/
-
-# Lock file
-package-lock.json
+Frontend/package-lock.json

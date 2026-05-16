@@ -6,7 +6,8 @@
     "precio": 15000,
     "imagen": "mouse.jpg",
     "stock": 50,
-    "activo": true
+    "activo": true,
+    "categoria": "Periféricos"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "precio": 45000,
     "imagen": "teclado.jpg",
     "stock": 30,
-    "activo": true
+    "activo": true,
+    "categoria": "Periféricos"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "precio": 60000,
     "imagen": "auriculares.jpg",
     "stock": 20,
-    "activo": true
+    "activo": true,
+    "categoria": "Audio"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "precio": 120000,
     "imagen": "monitor.jpg",
     "stock": 15,
-    "activo": true
+    "activo": true,
+    "categoria": "Monitores"
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "precio": 350000,
     "imagen": "notebook.jpg",
     "stock": 10,
-    "activo": true
+    "activo": true,
+    "categoria": "Notebooks"
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "precio": 30000,
     "imagen": "webcam.jpg",
     "stock": 25,
-    "activo": true
+    "activo": true,
+    "categoria": "Periféricos"
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "precio": 200000,
     "imagen": "silla.jpg",
     "stock": 12,
-    "activo": true
+    "activo": true,
+    "categoria": "Mobiliario"
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "precio": 80000,
     "imagen": "ssd.jpg",
     "stock": 40,
-    "activo": true
+    "activo": true,
+    "categoria": "Almacenamiento"
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "precio": 500000,
     "imagen": "gpu.jpg",
     "stock": 5,
-    "activo": true
+    "activo": true,
+    "categoria": "Componentes"
   },
   {
     "id": 10,
@@ -87,6 +96,7 @@
     "precio": 70000,
     "imagen": "router.jpg",
     "stock": 18,
-    "activo": true
+    "activo": true,
+    "categoria": "Redes"
   }
 ]

@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-100 min-h-screen font-sans flex flex-col text-gray-800">
+    <nav class="bg-indigo-600 text-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-4">
+            <a href="/" class="font-bold text-xl tracking-wide hover:text-indigo-200 transition">TiendaTech</a>
+          </div>
+          <div class="flex space-x-4 items-center">
+            <a href="/" class="hover:bg-indigo-700 px-3 py-2 rounded-md transition font-medium">Productos</a>
+            <a href="/cart" class="hover:bg-indigo-700 px-3 py-2 rounded-md transition font-medium flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              Carrito <span id="cart-count" class="bg-indigo-800 text-xs px-2 py-1 rounded-full">0</span>
+            </a>
+            <a href="/login" id="nav-login" class="hover:bg-indigo-700 px-3 py-2 rounded-md transition font-medium border border-indigo-400">Ingresar</a>
+            <button id="nav-logout" class="hidden hover:bg-red-600 px-3 py-2 rounded-md transition font-medium border border-red-400">Salir</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+      <slot />
+    </main>
+    <footer class="bg-white border-t mt-auto py-6">
+      <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+        &copy; 2026 TiendaTech. Todos los derechos reservados.
+      </div>
+    </footer>
+
+    <script>
+      // Update cart count globally
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        const count = cart.reduce((acc, item) => acc + item.cantidad, 0);
+        const countEl = document.getElementById('cart-count');
+        if (countEl) countEl.innerText = count.toString();
+      }
+
+      // Check login status
+      function checkAuth() {
+        const user = JSON.parse(localStorage.getItem('user') || 'null');
+        const navLogin = document.getElementById('nav-login');
+        const navLogout = document.getElementById('nav-logout');
+
+        if (user) {
+          if (navLogin) {
+            navLogin.textContent = `Hola, ${user.nombre}`;
+            navLogin.href = "#";
+            navLogin.classList.remove('border-indigo-400');
+            navLogin.classList.add('border-transparent');
+          }
+          if (navLogout) {
+            navLogout.classList.remove('hidden');
+            navLogout.addEventListener('click', () => {
+              localStorage.removeItem('user');
+              window.location.reload();
+            });
+          }
+        } else {
+          if (navLogout) navLogout.classList.add('hidden');
+        }
+      }
+
+      // Initialize
+      document.addEventListener('DOMContentLoaded', () => {
+        updateCartCount();
+        checkAuth();
+      });
+
+      // Listen for cart changes across tabs or custom events
+      window.addEventListener('storage', updateCartCount);
+      window.addEventListener('cart-updated', updateCartCount);
+    </script>
+  </body>
+</html>

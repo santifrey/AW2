@@ -11,6 +11,27 @@ router.get("/", (req, res) => {
   res.json(data);
 });
 
+// POST /login
+router.post("/login", (req, res) => {
+  const { email, contraseña } = req.body;
+  if (!email || !contraseña) {
+    return res.status(400).json({ error: "Faltan email o contraseña" });
+  }
+
+  const data = JSON.parse(fs.readFileSync(path));
+  const user = data.find(u => u.email === email && u.contraseña === contraseña);
+
+  if (!user) {
+    return res.status(401).json({ error: "Credenciales inválidas" });
+  }
+  
+  if (!user.activo) {
+    return res.status(403).json({ error: "Usuario inactivo" });
+  }
+
+  res.json({ id: user.id, nombre: user.nombre, apellido: user.apellido, email: user.email });
+});
+
 // GET 
 router.get("/:id", (req, res) => {
   const data = JSON.parse(fs.readFileSync(path));
