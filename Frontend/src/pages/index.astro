@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 
 
+import { API_URL } from '../config.js';
+
 let productos = [];
 let error = null;
 
 try {
-  const res = await fetch('http://localhost:3000/productos');
+  const res = await fetch(`${API_URL}/productos`);
   if (res.ok) {
     productos = await res.json();
   } else {
@@ -63,7 +65,7 @@ const categorias = [...new Set(productos.map((p) => p.categoria).filter(Boolean)
       <div class="flex-1">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="products-grid">
           {productos.map((producto) => (
-            <div class="product-card flex flex-col bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300" data-category={producto.categoria}>
+            <div class="product-card flex flex-col bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300" data-category={producto.categoria}>
               <div class="aspect-w-3 aspect-h-2 bg-gray-200">
                 <!-- Fallback to a placeholder if image doesn't exist -->
                 <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400">
