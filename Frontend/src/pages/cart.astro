@@ -181,7 +181,8 @@ import Layout from '../layouts/Layout.astro';
         const res = await fetch(`${API_URL}/ventas`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`
           },
           body: JSON.stringify(payload)
         });

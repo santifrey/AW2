@@ -1,28 +1,32 @@
 import express from "express";
-import fs from "fs";
+import Producto from "../models/Producto.js";
 
 const router = express.Router();
-const path = "./data/productos.json";
 
-// GET todos
-router.get("/", (req, res) => {
-  const data = JSON.parse(fs.readFileSync(path));
-  res.json(data);
+// GET todos los productos
+router.get("/", async (req, res) => {
+  try {
+    const productos = await Producto.find();
+    res.json(productos);
+  } catch (error) {
+    res.status(500).json({ error: "Error al obtener los productos" });
+  }
 });
 
 // GET por id
-router.get("/:id", (req, res) => {
-  const data = JSON.parse(fs.readFileSync(path));
-  const producto = data.find(p => p.id == req.params.id);
-
-  if (!producto) return res.status(404).json({ error: "Producto no encontrado" });
-
-  res.json(producto);
+router.get("/:id", async (req, res) => {
+  try {
+    const producto = await Producto.findOne({ id: Number(req.params.id) });
+    if (!producto) return res.status(404).json({ error: "Producto no encontrado" });
+    res.json(producto);
+  } catch (error) {
+    res.status(500).json({ error: "Error al obtener el producto" });
+  }
 });
 
-// POST
-router.post("/", (req, res) => {
-  const { nombre, desc, precio, imagen, stock, activo } = req.body;
+// POST crear producto
+router.post("/", async (req, res) => {
+  const { nombre, desc, precio, imagen, stock, activo, categoria } = req.body;
 
   if (
     !nombre ||
@@ -30,7 +34,8 @@ router.post("/", (req, res) => {
     precio === undefined ||
     !imagen ||
     stock === undefined ||
-    activo === undefined
+    activo === undefined ||
+    !categoria
   ) {
     return res.status(400).json({
       error: "Faltan campos obligatorios"
@@ -43,40 +48,34 @@ router.post("/", (req, res) => {
     });
   }
 
-  const data = JSON.parse(fs.readFileSync(path));
+  try {
+    const ultimo = await Producto.findOne().sort("-id");
+    const nextId = ultimo ? ultimo.id + 1 : 1;
 
-  const nuevo = {
-    id: data.length + 1,
-    nombre,
-    desc,
-    precio,
-    imagen,
-    stock,
-    activo
-  };
+    const nuevo = new Producto({
+      id: nextId,
+      nombre,
+      desc,
+      precio,
+      imagen,
+      stock,
+      activo,
+      categoria
+    });
 
-  data.push(nuevo);
-  fs.writeFileSync(path, JSON.stringify(data, null, 2));
-
-  res.status(201).json(nuevo);
+    await nuevo.save();
+    res.status(201).json(nuevo);
+  } catch (error) {
+    res.status(500).json({ error: "Error al crear el producto" });
+  }
 });
 
+// PUT actualizar producto
+router.put("/:id", async (req, res) => {
+  const productId = Number(req.params.id);
 
-// PUT
-router.put("/:id", (req, res) => {
-  const data = JSON.parse(fs.readFileSync(path));
+  const { nombre, desc, precio, imagen, stock, activo, categoria } = req.body;
 
-  const index = data.findIndex(p => p.id == req.params.id);
-
-  if (index === -1) {
-    return res.status(404).json({
-      error: "Producto no encontrado"
-    });
-  }
-
-  const { nombre, desc, precio, imagen, stock, activo } = req.body;
-
-  
   if (precio !== undefined && typeof precio !== "number") {
     return res.status(400).json({
       error: "Precio debe ser número"
@@ -89,20 +88,32 @@ router.put("/:id", (req, res) => {
     });
   }
 
+  try {
+    const updates = {};
+    if (nombre !== undefined) updates.nombre = nombre;
+    if (desc !== undefined) updates.desc = desc;
+    if (precio !== undefined) updates.precio = precio;
+    if (imagen !== undefined) updates.imagen = imagen;
+    if (stock !== undefined) updates.stock = stock;
+    if (activo !== undefined) updates.activo = activo;
+    if (categoria !== undefined) updates.categoria = categoria;
 
-  data[index] = {
-    ...data[index],
-    ...(nombre && { nombre }),
-    ...(desc && { desc }),
-    ...(precio !== undefined && { precio }),
-    ...(imagen && { imagen }),
-    ...(stock !== undefined && { stock }),
-    ...(activo !== undefined && { activo })
-  };
+    const productoActualizado = await Producto.findOneAndUpdate(
+      { id: productId },
+      { $set: updates },
+      { new: true }
+    );
 
-  fs.writeFileSync(path, JSON.stringify(data, null, 2));
+    if (!productoActualizado) {
+      return res.status(404).json({
+        error: "Producto no encontrado"
+      });
+    }
 
-  res.json(data[index]);
+    res.json(productoActualizado);
+  } catch (error) {
+    res.status(500).json({ error: "Error al actualizar el producto" });
+  }
 });
 
 export default router;
